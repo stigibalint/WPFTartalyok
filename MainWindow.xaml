@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="900">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -20,11 +20,11 @@
             </Grid.RowDefinitions>
             <ListBox x:Name="lbTartalyok" Background="LightPink" Margin="5"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button x:Name="btnDuplaz" Content="Dupla méretre növel"/>
-                <Button x:Name="btnLeenged" Content="Kiüríti" Margin="30 0"/>
+                <Button x:Name="btnDuplaz" Content="Dupla méretre növel" Click="btnDuplaz_Click"/>
+                <Button x:Name="btnLeenged" Content="Kiüríti" Margin="30 0" Click="btnLeenged_Click"/>
                 <TextBox x:Name="txtMennyitTolt" Width="40" Background="LightGreen"/>
                 <Label Content="liter"/>
-                <Button x:Name="btntolt" Content="Töltés"/>
+                <Button x:Name="btntolt" Content="Töltés" Click="btntolt_Click"/>
             </StackPanel>
         </Grid>
 
@@ -37,8 +37,8 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <RadioButton x:Name="rdoTeglatest" GroupName="TestFajta" Content="Téglatest"/>
-                <RadioButton x:Name="rdoKocka" GroupName="TestFajta" Content="Kocka" />
+                <RadioButton x:Name="rdoTeglatest" GroupName="TestFajta" Content="Téglatest" Checked="rdoTeglatest_Checked"/>
+                <RadioButton x:Name="rdoKocka" GroupName="TestFajta" Content="Kocka" Checked="rdoKocka_Checked" />
             </StackPanel>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -57,7 +57,7 @@
 
             <StackPanel Grid.Row="3" Orientation="Horizontal">
                 <Button x:Name="btnFelvesz" Content="Felvesz a listába" Height="30" Click="btnFelvesz_Click" />
-                <Button x:Name="btnRogzit" Content="Rögzít fájlba" Height="30" />
+                <Button x:Name="btnRogzit" Content="Rögzít fájlba" Height="30" Click="btnRogzit_Click" />
             </StackPanel>
         </Grid>
     </Grid>

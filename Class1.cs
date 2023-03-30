@@ -41,6 +41,11 @@ namespace Osztályok
             this.aktLiter = 0;
         }
 
+        public string Nev { get => nev; }
+        public int aEl { get => a; }
+        public int bEl { get => b; }
+        public int cEl { get => c; }
+        public double AktLiter { get => aktLiter; }
 
         //todo 4.feladat (4p) Fejezze be az elkezdett jellemző(property) készítését.Adja vissza a tartály cm3-ban mért térfogatát.
 
@@ -67,24 +72,28 @@ namespace Osztályok
         {
             get => (this.aktLiter * 1000 / Terfogat) * 100;
         }
-        public string Nev { get => nev; }
-        public int aEl { get => a; }
-        public int bEl { get => b; }
-        public int cEl { get => c; }
-        public double AktLiter { get => aktLiter; }
+       
 
         //todo 7.feladat (6p) Készítsen Tolt néven egyparaméteres visszatéréi érték nélküli metódust.A double paraméterben kapott literrel növeli a tartályban lévő mennyiséget.Amennyiben ez a mennyiség nem fér a tartályba, írjon ki hibaüzenetet és ne hajtsa végre a töltést!
 
         public void Tolt(double mennyit)
         {
-
-            if (Terfogat / 1000 < this.aktLiter + mennyit)
             {
-                //todo Ez nem szép! Helyette kivételt kellene dobni!
-                Console.WriteLine("Hiba! Nem lehet ennyit beletölteni!");
-                return;
+                try
+                {
+                    if (Terfogat / 1000 < this.aktLiter + mennyit)
+                    {
+                        return;
+                    }
+                    this.aktLiter += mennyit;
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Hiba! Nem lehet ennyit beletölteni!");
+                   
+                    return;
+                }
             }
-            this.aktLiter += mennyit;
         }
 
 
@@ -108,5 +117,7 @@ namespace Osztályok
             */
 
         }
+
+   
     }
 }
